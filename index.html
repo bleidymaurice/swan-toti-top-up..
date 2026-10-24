@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWAN TÒTI TOP UP</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101321;
+  color: white;
+}
+header {
+  text-align: center;
+  padding: 28px 12px;
+  background: linear-gradient(135deg,#5b21b6,#0e7490);
+}
+h1 { margin: 0; color: #ffe45c; }
+main {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 18px;
+}
+.card {
+  background: #20263a;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+}
+label { display: block; margin-top: 14px; }
+input, select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  margin-top: 7px;
+  border-radius: 8px;
+  border: 1px solid #566079;
+  background: #101321;
+  color: white;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 9px;
+  background: #22c55e;
+  color: #07130b;
+  font-weight: bold;
+  font-size: 16px;
+}
+.note { color: #cbd5e1; line-height: 1.6; }
+</style>
+</head>
+<body>
+<header>
+  <h1>💎 SWAN TÒTI TOP UP</h1>
+  <p>Recharge Free Fire en Haïti</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Commander des Diamonds</h2>
+    <p class="note">
+      Choisissez votre pack et indiquez votre ID Free Fire.
+      Le prix sera confirmé avant le paiement.
+    </p>
+
+    <form id="commande">
+      <label>Player ID Free Fire</label>
+      <input id="player" required
+        inputmode="numeric"
+        placeholder="Entrez votre Player ID">
+
+      <label>Pack de Diamonds</label>
+      <select id="pack" required>
+        <option value="">Choisir un pack</option>
+        <option>100 Diamonds</option>
+        <option>310 Diamonds</option>
+        <option>520 Diamonds</option>
+        <option>1060 Diamonds</option>
+        <option>Autre quantité</option>
+      </select>
+
+      <label>Nom du joueur (facultatif)</label>
+      <input id="pseudo" placeholder="Votre pseudo">
+
+      <button type="submit">Commander sur WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>💰 Paiement MonCash</h2>
+    <p class="note">
+      Numéro MonCash : <strong>+509 3511-6981</strong><br>
+      Confirmez le montant avec le vendeur avant de payer.
+      Envoyez votre preuve de paiement sur WhatsApp.
+      La livraison se fait après vérification.
+    </p>
+    <a href="https://wa.me/50943502429"
+       style="color:#86efac">
+       Contacter SWAN TÒTI TOP UP
+    </a>
+  </div>
+</main>
+
+<script>
+document.getElementById("commande").addEventListener(
+  "submit", function(e) {
+    e.preventDefault();
+
+    const player = document.getElementById("player").value.trim();
+    const pack = document.getElementById("pack").value;
+    const pseudo = document.getElementById("pseudo").value.trim();
+
+    const message =
+      "Bonjour SWAN TÒTI TOP UP !%0A" +
+      "Commande Free Fire%0A" +
+      "Player ID : " + encodeURIComponent(player) + "%0A" +
+      "Pack : " + encodeURIComponent(pack) + "%0A" +
+      "Pseudo : " + encodeURIComponent(pseudo || "Non renseigné") +
+      "%0AJe souhaite confirmer le prix et le paiement.";
+
+    window.open(
+      "https://wa.me/50943502429?text=" + message,
+      "_blank"
+    );
+  }
+);
+</script>
+</body>
+</html>
